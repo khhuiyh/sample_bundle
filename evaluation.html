@@ -1,0 +1,33 @@
+<H3>Challenge Evaluation</H3>
+
+<p>
+	The problem is a 2-class classification problem. Thus, you must provide the corresponding predicted class for image in the test set.In the following guidelines you must follow:
+</p>
+<p>
+	1、In the first stage,only the training set is given.To ensure fairness,We strongly recommend that you complete the competition by submitting code, which means that you are expected to submit code in the first stage.
+	You must directly submit your code for evaluation. See the details in Submission Format on this page.
+</p>
+	
+	2、In Phase 2, the test set will be open to all participants, and the challenge submission method will be changed to result submission.
+</p>
+<p>
+	The metric used to evaluate models and place the Teams in Leaderboard is the average of F1 score and specificity. The score is computed as:
+</p>
+
+<p>
+	F1 score = 2 * Precision * Recall / (Precision + Recall)
+</p>
+
+<p>
+	specificity = True_negative / (True_negative + False_positive)
+</p>
+<p>
+	score = (F1 score + specificity) / 2
+</p>
+<H3>Submission Format</H3>
+<p>
+	In the code submission stage, the script you submit should take the test set as the input and generate a answer.csv file under the specified output path. For the format of the answer.csv file(see the example under the Starting kit). 
+</p>
+<p>
+	In the result submission phase, you just need to submit your answer.csv and the command in the metadata will automatically copy it to the specified output path. The starting kit contains the compression package corresponding to two different submission methods. The metadata file contains the commands executed for your script. Since the path of the entire profiling process needs to be strictly consistent, we do not recommend that you modify any content of metadata, but you can view it. Finally, you only need to package your script into a format similar to the compression package in the Starting kit to upload it successfully.
+</p>

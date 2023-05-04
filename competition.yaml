@@ -1,0 +1,114 @@
+# Build an example competition
+---
+title: Hypertensive Retinopathy Analysis Challenge
+description: Hypertensive retinopathy (HR) refers to retinal damage caused by high blood pressure.
+image: logo.jpg
+has_registration: False
+end_date: 2023-06-15
+admin_names: khhuiyh
+competition_docker_image: khhuiyh/my-pytorch-pandas-image:latest
+html: 
+    overview: overview.html
+    evaluation: evaluation.html
+    terms: terms_and_conditions.html
+    data: data.html
+phases:
+    # 0:
+    #     color: green
+    #     phasenumber: 1
+    #     label: TASK1-CODE submission
+    #     start_date: 2023-02-15
+    #     max_submissions: 100
+    #     # max_submissions_per_day: 5
+    #     is_scoring_only: False
+    #     input_data: 6e7663db-aca2-4bce-a1e0-1f30744935fd
+    #     reference_data: 70830c1a-91b9-4243-8739-920fdce84f6d
+    #     scoring_program: program.zip
+    #     starting_kit: 0646320b-eb0f-4b33-8654-2a6a561c6157
+    #     datasets: 
+    #         # Dataset #1
+    #         1:
+    #             # Data set name
+    #             name: Challenge Data
+    #             # URL for the dataset
+    #             url: https://www.baidu.com
+    #             # Data set description
+    #             description: Example challenge data
+    # 1:
+    #     color: green
+    #     phasenumber: 1
+    #     label: TASK2-CODE submission
+    #     start_date: 2023-02-15
+    #     max_submissions: 100
+    #     # max_submissions_per_day: 5
+    #     is_scoring_only: False
+    #     input_data: 6e7663db-aca2-4bce-a1e0-1f30744935fd
+    #     reference_data: 70830c1a-91b9-4243-8739-920fdce84f6d
+    #     scoring_program: program.zip
+    #     starting_kit: 0646320b-eb0f-4b33-8654-2a6a561c6157
+    #     datasets: 
+    #         # Dataset #1
+    #         1:
+    #             # Data set name
+    #             name: Challenge Data
+    #             # URL for the dataset
+    #             url: https://www.baidu.com
+    #             # Data set description
+    #             description: Example challenge data
+    2:
+        color: orange
+        phasenumber: 2
+        label: TASK1-RESULT submission
+        start_date: 2023-02-16
+        max_submissions: 100
+        # max_submissions_per_day: 5
+        is_scoring_only: False
+        reference_data: 16c07495-c2d8-45c0-a2d1-97a50a1ca481
+        scoring_program: program.zip
+    # 3:
+    #     color: orange
+    #     phasenumber: 2
+    #     label: TASK2-RESULT submission
+    #     start_date: 2023-02-16
+    #     max_submissions: 100
+    #     # max_submissions_per_day: 5
+    #     is_scoring_only: False
+    #     input_data: 6e7663db-aca2-4bce-a1e0-1f30744935fd
+    #     reference_data: 70830c1a-91b9-4243-8739-920fdce84f6d
+    #     scoring_program: program.zip
+    #     starting_kit: 0646320b-eb0f-4b33-8654-2a6a561c6157
+
+leaderboard:
+    leaderboards:
+        Results: &RESULTS
+            label: Results
+            rank: 1
+        # Results1: &RESULTS1
+        #     label: Results1
+        #     rank: 2
+    columns:
+        Kappa:
+            leaderboard: *RESULTS
+            label: Kappa
+            numeric_format: 6
+            rank: 1
+        Macro_F1:
+            leaderboard: *RESULTS
+            label: Macro_F1
+            numeric_format: 6
+            rank: 2
+        Macro_Specificity:
+            leaderboard: *RESULTS
+            label: Macro_Specificity
+            numeric_format: 6
+            rank: 3
+        CPU_Time:
+            leaderboard: *RESULTS
+            label: CPU_Time
+            numeric_format: 6
+            rank: 4
+
+        # submission_ways:
+        #     leaderboard: *RESULTS
+        #     label: submission_ways
+        #     rank: 2
